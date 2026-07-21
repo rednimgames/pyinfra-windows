@@ -1,0 +1,12 @@
+{
+    "kwargs": {
+        "public_keys": ["ssh-ed25519 AAAAexample one@example.com"],
+        "user": "someuser"
+    },
+    "facts": {},
+    "commands": [],
+    "exception": {
+        "name": "OperationValueError",
+        "message": "Managing per-user authorized_keys requires authorized_key_directory"
+    }
+}

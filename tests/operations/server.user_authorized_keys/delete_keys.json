@@ -1,0 +1,18 @@
+{
+    "kwargs": {
+        "public_keys": ["ssh-ed25519 AAAAkeep one@example.com"],
+        "delete_keys": true
+    },
+    "facts": {
+        "server.AuthorizedKeys": {
+            "path=C:\\ProgramData\\ssh\\administrators_authorized_keys": [
+                "ssh-ed25519 AAAAkeep one@example.com",
+                "ssh-ed25519 AAAAremove two@example.com"
+            ]
+        }
+    },
+    "commands": [
+        "Set-Content -LiteralPath 'C:\\ProgramData\\ssh\\administrators_authorized_keys' -Value @('ssh-ed25519 AAAAkeep one@example.com') -Encoding ascii",
+        "& icacls.exe 'C:\\ProgramData\\ssh\\administrators_authorized_keys' /inheritance:r /grant '*S-1-5-18:F' /grant '*S-1-5-32-544:F'"
+    ]
+}

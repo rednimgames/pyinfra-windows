@@ -2,8 +2,10 @@ import re
 from datetime import datetime
 
 from dateutil.parser import parse as parse_date
+from typing_extensions import override
 
 from pyinfra.api import FactBase
+from pyinfra.facts.server import AuthorizedKeys as PosixAuthorizedKeys
 
 
 class Home(FactBase):
@@ -369,3 +371,13 @@ class ComputerInfo(FactBase):
     @staticmethod
     def process(output):
         return _format_windows(output)
+
+
+class AuthorizedKeys(PosixAuthorizedKeys):
+    """
+    Returns a list of authorized SSH public keys in the given file.
+    """
+
+    @override
+    def command(self, path: str) -> str:
+        return 'if (Test-Path "{0}") {{ Get-Content "{0}" }}'.format(path)

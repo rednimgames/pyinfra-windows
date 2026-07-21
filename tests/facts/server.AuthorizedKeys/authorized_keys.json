@@ -1,0 +1,12 @@
+{
+    "arg": ["C:\\ProgramData\\ssh\\administrators_authorized_keys"],
+    "command": "if (Test-Path \"C:\\ProgramData\\ssh\\administrators_authorized_keys\") { Get-Content \"C:\\ProgramData\\ssh\\administrators_authorized_keys\" }",
+    "output": [
+        "ssh-ed25519 AAAAexample one@example.com",
+        "# a comment",
+        ""
+    ],
+    "fact": [
+        "ssh-ed25519 AAAAexample one@example.com"
+    ]
+}

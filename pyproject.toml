@@ -23,3 +23,4 @@ packages = ["src/pyinfra_windows"]
 
 [project.entry-points."pyinfra.connectors"]
 winrm = "pyinfra_windows.connectors.winrm:WinRMConnector"
+winssh = "pyinfra_windows.connectors.ssh:WindowsSSHConnector"

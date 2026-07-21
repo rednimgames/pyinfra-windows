@@ -1,0 +1,15 @@
+{
+    "kwargs": {
+        "public_keys": ["ssh-ed25519 AAAAexample one@example.com"],
+        "delete_keys": true
+    },
+    "facts": {
+        "server.AuthorizedKeys": {
+            "path=C:\\ProgramData\\ssh\\administrators_authorized_keys": [
+                "ssh-ed25519 AAAAexample one@example.com"
+            ]
+        }
+    },
+    "commands": [],
+    "noop_description": "authorized keys are up to date"
+}

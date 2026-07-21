@@ -1,0 +1,16 @@
+{
+    "kwargs": {
+        "public_keys": ["ssh-ed25519 AAAAnew two@example.com"]
+    },
+    "facts": {
+        "server.AuthorizedKeys": {
+            "path=C:\\ProgramData\\ssh\\administrators_authorized_keys": [
+                "ssh-ed25519 AAAAexisting one@example.com"
+            ]
+        }
+    },
+    "commands": [
+        "Set-Content -LiteralPath 'C:\\ProgramData\\ssh\\administrators_authorized_keys' -Value @('ssh-ed25519 AAAAexisting one@example.com', 'ssh-ed25519 AAAAnew two@example.com') -Encoding ascii",
+        "& icacls.exe 'C:\\ProgramData\\ssh\\administrators_authorized_keys' /inheritance:r /grant '*S-1-5-18:F' /grant '*S-1-5-32-544:F'"
+    ]
+}
